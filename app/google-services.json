@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "574258536274",
+    "project_id": "journal-it-df5a6",
+    "storage_bucket": "journal-it-df5a6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574258536274:android:a961176a7ff8cbcaa4648b",
+        "android_client_info": {
+          "package_name": "com.example.journalit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGskj_-zUHpXC4ge3Lh-eZOWIL17R0tvQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

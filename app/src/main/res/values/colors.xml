@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="lailac">#B9BBC7</color>
     <color name="lightPurple">#686E83</color>
+    <color name="darkPurple">#4A517E</color>
+    <color name="buleGreen">#235f7f</color>
 </resources>
