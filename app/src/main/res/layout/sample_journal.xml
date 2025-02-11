@@ -28,24 +28,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/displayDate"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="4dp"
-                android:text="Date"
-                app:layout_constraintStart_toEndOf="@+id/getImage"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
                 android:id="@+id/displayTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="10dp"
                 android:text="Title"
                 app:layout_constraintStart_toEndOf="@+id/getImage"
-                app:layout_constraintTop_toBottomOf="@+id/displayDate" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/displayDesc"
@@ -53,7 +43,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="4dp"
-                android:text="Journal desc"
+                android:text="Story desc"
                 app:layout_constraintStart_toEndOf="@+id/getImage"
                 app:layout_constraintTop_toBottomOf="@+id/displayTitle" />
 

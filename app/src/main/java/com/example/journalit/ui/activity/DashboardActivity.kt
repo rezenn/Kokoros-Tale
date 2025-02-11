@@ -11,7 +11,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.journalit.R
 import com.example.journalit.databinding.ActivityDashboardBinding
 import com.example.journalit.ui.fragment.AddFragment
-import com.example.journalit.ui.fragment.Calendar_Fragment
+import com.example.journalit.ui.fragment.BookFragment
 import com.example.journalit.ui.fragment.HomeFragment
 import com.example.journalit.ui.fragment.ProfileFragment
 import com.example.journalit.ui.fragment.SearchFragment
@@ -36,10 +36,9 @@ class DashboardActivity : AppCompatActivity() {
         binding.bottomView.setOnItemSelectedListener { menu ->
             when(menu.itemId){
                 R.id.navHome -> replaceFragment(HomeFragment())
-                R.id.navSearch -> replaceFragment(SearchFragment())
+                R.id.navBookTracker -> replaceFragment(BookFragment())
                 R.id.navProfile -> replaceFragment(ProfileFragment())
                 R.id.navAdd -> replaceFragment(AddFragment())
-                R.id.navCalendar -> replaceFragment(Calendar_Fragment())
 
                 else -> {}
             }
