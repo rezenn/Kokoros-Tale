@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "JournalIt"
+rootProject.name = "Kokoro"
 include(":app")
  
