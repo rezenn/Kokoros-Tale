@@ -46,14 +46,6 @@ class DashboardActivity : AppCompatActivity() {
         }
         binding.recycler.adapter = adapter
         binding.recycler.layoutManager = LinearLayoutManager(this)
-//
-//        storyViewModel.loading.observe(this) { loading ->
-//            if (loading) {
-//                binding.progressBar.visibility = View.VISIBLE
-//            } else {
-//                binding.progressBar.visibility = View.GONE
-//            }
-//        }
 
         binding.floatingActionButton2.setOnClickListener {
             var intent = Intent(this@DashboardActivity,

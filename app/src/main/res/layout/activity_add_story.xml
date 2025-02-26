@@ -21,10 +21,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/storyTitle" />
 
+    <!-- Story Title Input -->
     <TextView
         android:id="@+id/logoName2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
         android:fontFamily="@font/merienda_bold"
         android:shadowColor="#666666"
         android:shadowDx="2"
@@ -34,11 +38,11 @@
         android:textColor="@color/buleGreen"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Story Title Input -->
     <EditText
         android:id="@+id/storyTitle"
         android:layout_width="0dp"
@@ -46,39 +50,13 @@
         android:hint="Story Title"
         android:inputType="text"
         android:padding="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:background="@android:drawable/editbox_background"
         app:layout_constraintTop_toBottomOf="@id/logoName2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
-
-    <!-- Story Input (Multi-line Text) -->
-
-    <!-- Image Preview -->
-<!--    <ImageView-->
-<!--        android:id="@+id/storyImage"-->
-<!--        android:layout_width="200dp"-->
-<!--        android:layout_height="200dp"-->
-<!--        android:scaleType="centerCrop"-->
-<!--        android:src="@drawable/placeholder"-->
-<!--        android:visibility="gone"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/storyInput"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        android:layout_marginTop="16dp"/>-->
-
-<!--    &lt;!&ndash; Upload Image Button &ndash;&gt;-->
-<!--    <Button-->
-<!--        android:id="@+id/uploadImageButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Upload Image"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/storyInput"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        android:layout_marginTop="8dp"/>-->
-
-    <!-- Submit Story Button -->
 
     <EditText
         android:id="@+id/storyInput"
@@ -87,10 +65,12 @@
         android:layout_marginTop="25dp"
         android:background="@android:drawable/editbox_background"
         android:gravity="top"
-        android:hint="Write your story here..."
+        android:hint="Write your story..."
         android:inputType="textMultiLine"
         android:minHeight="150dp"
         android:padding="12dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -102,6 +82,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:backgroundTint="@color/buleGreen"
         android:text="Post Story"
         android:textColor="@android:color/white"

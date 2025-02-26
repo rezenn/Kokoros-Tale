@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kokoro.R
 import com.example.kokoro.model.StoryModel
@@ -47,6 +46,20 @@ class StoryAdapter ( val context: Context,
     override fun onBindViewHolder(holder: StoryViewHolder, position: Int) {
         holder.sTitle.text = data[position].storyTitle
         holder.sDesc.text = data[position].storyDesc
+        holder.sDesc.maxLines = 5 // Initially collapsed
+        holder.sDesc.ellipsize = android.text.TextUtils.TruncateAt.END
+
+        var isExpanded = false
+        holder.sDesc.setOnClickListener {
+            isExpanded = !isExpanded
+            if (isExpanded) {
+                holder.sDesc.maxLines = Integer.MAX_VALUE
+                holder.sDesc.ellipsize = null
+            } else {
+                holder.sDesc.maxLines = 5
+                holder.sDesc.ellipsize = android.text.TextUtils.TruncateAt.END
+            }
+        }
 
         Picasso.get().load(data[position].imageUrl).into(holder.imageView, object : Callback {
             override fun onSuccess() {
@@ -64,6 +77,7 @@ class StoryAdapter ( val context: Context,
             context.startActivity(intent)
         }
     }
+
     fun updateData(stories: List<StoryModel>) {
         data.clear()
         data.addAll(stories)
