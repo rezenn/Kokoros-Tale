@@ -10,18 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
-        app:cardCornerRadius="12dp">
+        app:cardCornerRadius="12dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
-
-            <!-- Centered Image -->
-
-            <!-- Title -->
-
-            <!-- Description with Expandable Functionality -->
+            android:padding="10dp"
+           >
 
             <ImageView
                 android:id="@+id/getImage"
@@ -40,6 +37,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Title"
+                android:padding="5dp"
+                android:fontFamily="@font/garamond_normal"
+                android:textAllCaps="true"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +55,10 @@
                 android:ellipsize="end"
                 android:maxLines="5"
                 android:text="Story desc..."
+                android:fontFamily="@font/merriweather_light"
+                android:padding="5dp"
                 android:textSize="14sp"
+                android:lineSpacingExtra="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/getImage" />
