@@ -6,19 +6,25 @@ import android.os.Parcelable
 data class StoryModel(
     var storyId: String ="",
     var storyTitle : String ="",
-    var storyDesc : String =""
-): Parcelable   {
+    var storyDesc : String ="",
+    var imageUrl : String = "",
+
+    ): Parcelable   {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
         parcel.readString() ?: "",
         parcel.readString() ?: "",
-    ) {
+        parcel.readString() ?: "",
+
+        ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(storyId)
         parcel.writeString(storyTitle)
         parcel.writeString(storyDesc)
+        parcel.writeString(imageUrl)
+
     }
 
     override fun describeContents(): Int {

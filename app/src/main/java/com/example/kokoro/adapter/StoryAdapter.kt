@@ -1,38 +1,78 @@
 package com.example.kokoro.adapter
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kokoro.R
 import com.example.kokoro.model.StoryModel
+import com.example.kokoro.ui.activity.UpdateStoryActivity
+import com.squareup.picasso.Callback
+import com.squareup.picasso.Picasso
+import java.lang.Exception
 
-class StoryAdapter(private val storyList: ArrayList<StoryModel>) :
-    RecyclerView.Adapter<StoryAdapter.StoryViewHolder>() {
+class StoryAdapter ( val context: Context,
+    var data: ArrayList<StoryModel>): RecyclerView.Adapter<StoryAdapter.StoryViewHolder>(){
 
-    inner class StoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val title: TextView = itemView.findViewById(R.id.displayTitle)
-        val desc: TextView = itemView.findViewById(R.id.displayDesc)
+        class StoryViewHolder(itemView: View)
+            : RecyclerView.ViewHolder(itemView){
+                val imageView: ImageView = itemView.findViewById(R.id.getImage)
+                val progressBar: ProgressBar = itemView.findViewById(R.id.progressBar2)
+                val editButton : TextView = itemView.findViewById(R.id.lblEdit)
+                val sTitle: TextView = itemView.findViewById(R.id.displayTitle)
+                val sDesc: TextView = itemView.findViewById(R.id.displayDesc)
+            }
+
+
+        override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ):StoryViewHolder {
+            val itemView : View = LayoutInflater.from(context).
+            inflate(R.layout.sample_story,parent,false)
+
+            return StoryViewHolder(itemView)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoryViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.sample_story, parent, false)
-        return StoryViewHolder(view)
+    override fun getItemCount(): Int{
+        return data.size
     }
 
     override fun onBindViewHolder(holder: StoryViewHolder, position: Int) {
-        val story = storyList[position]
-        holder.title.text = story.storyTitle
-        holder.desc.text = story.storyDesc
+        holder.sTitle.text = data[position].storyTitle
+        holder.sDesc.text = data[position].storyDesc
+
+        Picasso.get().load(data[position].imageUrl).into(holder.imageView, object : Callback {
+            override fun onSuccess() {
+                holder.progressBar.visibility = View.GONE
+            }
+
+            override fun onError(e: Exception?) {
+                // Handle error
+            }
+        })
+
+        holder.editButton.setOnClickListener {
+            val intent = Intent(context, UpdateStoryActivity::class.java)
+            intent.putExtra("storyId", data[position].storyId)
+            context.startActivity(intent)
+        }
     }
-
-    override fun getItemCount(): Int = storyList.size
-
-    // Method to update the list dynamically
-    fun updateList(newList: ArrayList<StoryModel>) {
-        storyList.clear()
-        storyList.addAll(newList)
+    fun updateData(stories: List<StoryModel>) {
+        data.clear()
+        data.addAll(stories)
         notifyDataSetChanged()
     }
+
+    fun getStoryId(position: Int) : String{
+        return data[position].storyId
+    }
+
+
 }
