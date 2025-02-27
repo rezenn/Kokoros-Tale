@@ -7,7 +7,7 @@ data class StoryModel(
     var storyTitle: String = "",
     var storyDesc: String = "",
     var imageUrl: String = "",
-    var timestamp: Long = System.currentTimeMillis() // Add timestamp field
+    var timestamp: Long = System.currentTimeMillis()
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
