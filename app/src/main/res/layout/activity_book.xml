@@ -39,7 +39,7 @@
 
 
     <TextView
-        android:id="@+id/BookBtn"
+        android:id="@+id/StoriesBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
