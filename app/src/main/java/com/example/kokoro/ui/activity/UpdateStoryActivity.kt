@@ -1,5 +1,6 @@
 package com.example.kokoro.ui.activity
 
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -11,6 +12,7 @@ import com.example.kokoro.databinding.ActivityUpdateStoryBinding
 import com.example.kokoro.repository.StoryRepositoryImpl
 import com.example.kokoro.utils.ImageUtils
 import com.example.kokoro.viewModel.StoryViewModel
+import com.squareup.picasso.Picasso
 
 class UpdateStoryActivity : AppCompatActivity() {
 
@@ -19,7 +21,7 @@ class UpdateStoryActivity : AppCompatActivity() {
     private lateinit var imageUtils: ImageUtils
 
     private var storyId: String? = null
-    private var imageUrl: String? = null  // Store the selected image URL
+    private var imageUrl: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,21 +33,26 @@ class UpdateStoryActivity : AppCompatActivity() {
         storyViewModel = StoryViewModel(repo)
         imageUtils = ImageUtils(this)
 
-        // Get Story ID
         storyId = intent.getStringExtra("storyId")
 
-        // Load existing story data
         storyId?.let {
             storyViewModel.getStoryById(it)
         }
 
         storyViewModel.stories.observe(this) { story ->
-            binding.editStoryTitle.setText(story?.storyTitle ?: "")
-            binding.editStoryInput.setText(story?.storyDesc ?: "")
-            imageUrl = story?.imageUrl
+            if (story != null) {
+                binding.editStoryTitle.setText(story.storyTitle ?: "")
+                binding.editStoryInput.setText(story.storyDesc ?: "")
+
+                imageUrl = story.imageUrl
+
+                if (!imageUrl.isNullOrEmpty()) {
+                    Picasso.get().load(imageUrl).into(binding.editImageBrowse)
+                }
+            }
         }
 
-        // Handle image selection
+        // Handle new image selection
         imageUtils.registerActivity { uri ->
             uri?.let {
                 imageUrl = it.toString()

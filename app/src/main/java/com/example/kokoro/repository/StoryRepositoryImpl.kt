@@ -24,16 +24,18 @@ class StoryRepositoryImpl: StoryRepository {
     val reference: DatabaseReference = database.reference.child("stories")
 
     override fun addStory(storyModel: StoryModel, callback: (Boolean, String) -> Unit) {
-        var id = reference.push().key.toString()
+        val id = reference.push().key.toString()
         storyModel.storyId = id
+        storyModel.timestamp = System.currentTimeMillis() // Assign timestamp
+
         reference.child(id).setValue(storyModel)
             .addOnCompleteListener {
-            if (it.isSuccessful){
-                callback(true, "Story Added Successfully")
-            }else{
-                callback(false, "${it.exception?.message}")
+                if (it.isSuccessful) {
+                    callback(true, "Story Added Successfully")
+                } else {
+                    callback(false, "${it.exception?.message}")
+                }
             }
-        }
     }
 
     override fun updateStory(
@@ -41,15 +43,18 @@ class StoryRepositoryImpl: StoryRepository {
         data: MutableMap<String, Any>,
         callback: (Boolean, String) -> Unit
     ) {
+        data["timestamp"] = System.currentTimeMillis() // Update timestamp when story is edited
+
         reference.child(storyId).updateChildren(data)
             .addOnCompleteListener {
-            if(it.isSuccessful){
-                callback(true, "Story updated successfully")
-            }else{
-                callback(false, "${it.exception?.message}")
+                if (it.isSuccessful) {
+                    callback(true, "Story updated successfully")
+                } else {
+                    callback(false, "${it.exception?.message}")
+                }
             }
-        }
     }
+
 
     override fun deleteStory(storyId: String, callback: (Boolean, String) -> Unit) {
         reference.child(storyId).removeValue()
@@ -91,21 +96,20 @@ class StoryRepositoryImpl: StoryRepository {
                                 stories.add(model)
                             }
                         }
-                        Log.d("FirebaseData", "Stories: $stories")
+                        stories.sortByDescending { it.timestamp } // Sorting by timestamp
                         callback(stories, true, "Fetched")
                     } else {
-                        Log.d("FirebaseData", "No data found")
                         callback(null, false, "No data found")
                     }
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    Log.e("FirebaseError", error.message)
                     callback(null, false, error.message)
                 }
             }
         )
     }
+
 
     private val cloudinary = Cloudinary(
         mapOf(
