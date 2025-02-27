@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="12dp"
+        tools:layout_editor_absoluteX="12dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="355dp"
+            android:background="#88C3B5E0"
+            android:padding="10dp">
+
+
+            <TextView
+                android:id="@+id/displayTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/garamond_normal"
+                android:padding="5dp"
+                android:text="Book Title"
+                android:textAllCaps="true"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintBottom_toTopOf="@+id/getImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/displayTitle" />
+
+            <ImageView
+                android:id="@+id/getImage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/placeholder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/displayTitle" />
+
+            <TextView
+                android:id="@+id/Genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/merriweather_light"
+                android:lineSpacingExtra="5dp"
+                android:maxLines="5"
+                android:padding="5dp"
+                android:text="Genre:"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/getImage" />
+
+            <TextView
+                android:id="@+id/displayGenre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="277dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/merriweather_light"
+                android:lineSpacingExtra="5dp"
+                android:maxLines="5"
+                android:padding="5dp"
+                android:text="Genre"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/lblEdit"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/getImage" />
+
+            <TextView
+                android:id="@+id/lblEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+                android:textColor="@android:color/holo_blue_dark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/getImage"
+                app:layout_constraintEnd_toEndOf="@+id/getImage"
+                app:layout_constraintStart_toStartOf="@+id/getImage"
+                app:layout_constraintTop_toTopOf="@+id/getImage"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/Author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/merriweather_light"
+                android:lineSpacingExtra="5dp"
+                android:maxLines="5"
+                android:padding="5dp"
+                android:text="Author:"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/displayAuthor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Genre" />
+
+            <TextView
+                android:id="@+id/displayAuthor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/merriweather_light"
+                android:lineSpacingExtra="5dp"
+                android:maxLines="5"
+                android:padding="5dp"
+                android:text="Author"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/Author"
+                app:layout_constraintTop_toBottomOf="@+id/displayGenre" />
+
+            <TextView
+                android:id="@+id/releaseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/merriweather_light"
+                android:lineSpacingExtra="5dp"
+                android:maxLines="5"
+                android:padding="5dp"
+                android:text="Release Date:"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Author" />
+
+            <TextView
+                android:id="@+id/displayReleaseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/merriweather_light"
+                android:lineSpacingExtra="5dp"
+                android:maxLines="5"
+                android:padding="5dp"
+                android:text="Date"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/descriptionBook"
+                app:layout_constraintTop_toBottomOf="@+id/displayAuthor" />
+
+            <TextView
+                android:id="@+id/descriptionBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/merriweather_light"
+                android:lineSpacingExtra="5dp"
+                android:maxLines="5"
+                android:padding="5dp"
+                android:text="Description:"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/releaseDate" />
+
+            <TextView
+                android:id="@+id/displayDescriptionBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/merriweather_light"
+                android:lineSpacingExtra="5dp"
+                android:maxLines="5"
+                android:padding="5dp"
+                android:text="Description"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/descriptionBook"
+                app:layout_constraintTop_toBottomOf="@+id/displayReleaseDate" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

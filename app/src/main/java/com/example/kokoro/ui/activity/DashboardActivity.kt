@@ -54,6 +54,11 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.BookBtn.setOnClickListener {
+            val intent2 = Intent(this@DashboardActivity, BookActivity::class.java)
+            startActivity(intent2)
+        }
+
         ItemTouchHelper(object: ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
             override fun onMove(
                 recyclerView: RecyclerView,

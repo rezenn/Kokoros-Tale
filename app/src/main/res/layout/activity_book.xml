@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.DashboardActivity">
+    tools:context=".ui.activity.BookActivity">
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -36,20 +37,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/BookBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="10dp"
-        android:text="Books"
+        android:text="Stories"
         android:textColor="#078BF2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
+        android:id="@+id/recycler2"
         android:layout_width="410dp"
         android:layout_height="790dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,20 +59,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoName2"
         app:layout_constraintVertical_bias="0.438"
-        tools:listitem="@layout/sample_story" />
+        tools:listitem="@layout/sample_book" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/baseline_add_24" />
-
-
-
+    android:id="@+id/floatingActionButton3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="16dp"
+    android:clickable="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:srcCompat="@drawable/baseline_add_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
