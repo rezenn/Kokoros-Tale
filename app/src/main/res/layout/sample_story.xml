@@ -9,11 +9,13 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
+        android:layout_margin="8dp"
         app:cardCornerRadius="12dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-       >
+        tools:layout_editor_absoluteX="12dp">
+
+    >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -21,8 +23,6 @@
             android:padding="10dp"
             android:background="#88C3B5E0"
            >
-
-
 
             <TextView
                 android:id="@+id/displayTitle"

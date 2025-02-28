@@ -38,7 +38,7 @@
         </activity>
         <activity
             android:name=".ui.activity.BookActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ui.activity.UpdateStoryActivity"
             android:exported="true">

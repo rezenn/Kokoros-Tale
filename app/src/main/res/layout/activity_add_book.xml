@@ -7,21 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.AddBookActivity">
 
-    <EditText
-        android:id="@+id/storyTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Story Title"
-        android:inputType="text"
-        android:padding="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@android:drawable/editbox_background"
-        app:layout_constraintTop_toBottomOf="@id/logoName2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
-
     <ImageView
         android:id="@+id/imageBrowse"
         android:layout_width="150dp"
@@ -31,7 +16,7 @@
         android:src="@drawable/placeholder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/storyTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/bookTitle" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -40,7 +25,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -72,7 +57,7 @@
         android:id="@+id/bookTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Story Title"
+        android:hint="Book Title"
         android:inputType="text"
         android:padding="10dp"
         android:layout_marginStart="10dp"
@@ -159,71 +144,11 @@
         app:layout_constraintTop_toBottomOf="@+id/bookGenre" />
 
     <TextView
-        android:id="@+id/ReleaseDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="7dp"
-        android:ellipsize="end"
-        android:fontFamily="@font/merriweather_light"
-        android:lineSpacingExtra="5dp"
-        android:maxLines="5"
-        android:padding="5dp"
-        android:text="Release Date:"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Author" />
-
-    <EditText
-        android:id="@+id/bookReleasedDate"
-        android:layout_width="259dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="45dp"
-        android:background="@android:drawable/editbox_background"
-        android:hint="yyyy-mm-dd"
-        android:inputType="date"
-        android:padding="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toEndOf="@+id/ReleaseDate"
-        app:layout_constraintTop_toBottomOf="@+id/bookAuthor" />
-
-    <TextView
-        android:id="@+id/Rate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="7dp"
-        android:ellipsize="end"
-        android:fontFamily="@font/merriweather_light"
-        android:lineSpacingExtra="5dp"
-        android:maxLines="5"
-        android:padding="5dp"
-        android:text="Rate:"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ReleaseDate" />
-
-    <EditText
-        android:id="@+id/bookRate"
-        android:layout_width="259dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="45dp"
-        android:background="@android:drawable/editbox_background"
-        android:hint="0"
-        android:inputType="number"
-        android:padding="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toEndOf="@+id/ReleaseDate"
-        app:layout_constraintTop_toBottomOf="@+id/bookReleasedDate" />
-
-    <TextView
         android:id="@+id/Description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
         android:ellipsize="end"
         android:fontFamily="@font/merriweather_light"
         android:lineSpacingExtra="5dp"
@@ -233,14 +158,14 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Rate" />
+        app:layout_constraintTop_toBottomOf="@+id/Author" />
 
     <EditText
         android:id="@+id/bookInput"
         android:layout_width="259dp"
         android:layout_height="200dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="10dp"
         android:background="@android:drawable/editbox_background"
         android:gravity="top"
@@ -252,7 +177,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/Description"
-        app:layout_constraintTop_toBottomOf="@+id/bookRate" />
+        app:layout_constraintTop_toBottomOf="@+id/bookAuthor" />
 
     <Button
         android:id="@+id/submitStoryButton"
@@ -262,7 +187,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:backgroundTint="@color/buleGreen"
-        android:text="Post Story"
+        android:text="Post Book Review"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

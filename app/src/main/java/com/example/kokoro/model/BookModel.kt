@@ -2,15 +2,12 @@ package com.example.kokoro.model
 
 import android.os.Parcel
 import android.os.Parcelable
-import java.util.Date
 
 data class BookModel (
     var bookId: String = "",
     var bookTitle: String = "",
     var bookGenre: String = "",
     var bookAuthor: String = "",
-    var bookReleaseDate: Date = Date(),
-    var bookRate: Int = 0,
     var bookThoughts: String = "",
     var bookimageUrl: String = "",
     var timestamp: Long = System.currentTimeMillis()
@@ -20,8 +17,6 @@ data class BookModel (
         parcel.readString() ?: "",
         parcel.readString() ?: "",
         parcel.readString() ?: "",
-        Date(parcel.readLong()),
-        parcel.readInt(),
         parcel.readString() ?: "",
         parcel.readString() ?: "",
         parcel.readLong()
@@ -33,7 +28,6 @@ data class BookModel (
         parcel.writeString(bookTitle)
         parcel.writeString(bookGenre)
         parcel.writeString(bookAuthor)
-        parcel.writeInt(bookRate)
         parcel.writeString(bookThoughts)
         parcel.writeString(bookimageUrl)
         parcel.writeLong(timestamp)
