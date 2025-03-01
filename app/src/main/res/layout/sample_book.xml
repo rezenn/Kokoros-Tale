@@ -20,7 +20,7 @@
             android:background="#88C3B5E0"
             android:padding="10dp">
 
-
+            <!-- Book Title -->
             <TextView
                 android:id="@+id/displayBookTitle"
                 android:layout_width="wrap_content"
@@ -37,6 +37,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <!-- Separator Line -->
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
@@ -48,16 +49,22 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/displayBookTitle" />
 
+            <!-- Book Image -->
             <ImageView
                 android:id="@+id/getBookImage"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="8dp"
                 android:src="@drawable/placeholder"
+                android:clipToOutline="true"
+                android:outlineProvider="background"
+                android:background="@drawable/rounded_corners"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/displayBookTitle" />
+
+            <!-- Genre -->
             <TextView
                 android:id="@+id/Genre1"
                 android:layout_width="wrap_content"
@@ -73,6 +80,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/getBookImage" />
 
+            <!-- Display Genre -->
             <TextView
                 android:id="@+id/displayGenre"
                 android:layout_width="wrap_content"
@@ -88,6 +96,7 @@
                 app:layout_constraintStart_toEndOf="@+id/Genre1"
                 app:layout_constraintTop_toBottomOf="@+id/getBookImage" />
 
+            <!-- Edit Button -->
             <TextView
                 android:id="@+id/lblBookEdit"
                 android:layout_width="wrap_content"
@@ -97,6 +106,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
+            <!-- ProgressBar -->
             <ProgressBar
                 android:id="@+id/progressBar3"
                 style="?android:attr/progressBarStyle"
@@ -108,34 +118,7 @@
                 app:layout_constraintTop_toTopOf="@+id/getBookImage"
                 tools:ignore="MissingConstraints" />
 
-            <!--            <TextView-->
-<!--                android:id="@+id/releaseDate"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:ellipsize="end"-->
-<!--                android:fontFamily="@font/merriweather_light"-->
-<!--                android:lineSpacingExtra="5dp"-->
-<!--                android:maxLines="5"-->
-<!--                android:padding="5dp"-->
-<!--                android:text="Release Date:"-->
-<!--                android:textSize="14sp"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/Author" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/displayReleaseDate"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="2dp"-->
-<!--                android:ellipsize="end"-->
-<!--                android:fontFamily="@font/merriweather_light"-->
-<!--                android:lineSpacingExtra="5dp"-->
-<!--                android:maxLines="5"-->
-<!--                android:padding="5dp"-->
-<!--                android:text="Date"-->
-<!--                android:textSize="14sp"-->
-<!--                app:layout_constraintStart_toEndOf="@+id/descriptionBook"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/displayAuthor" />-->
+            <!-- Author -->
             <TextView
                 android:id="@+id/Author1"
                 android:layout_width="wrap_content"
@@ -151,6 +134,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Genre1" />
 
+            <!-- Display Author -->
             <TextView
                 android:id="@+id/displayAuthor"
                 android:layout_width="wrap_content"
@@ -167,6 +151,7 @@
                 app:layout_constraintStart_toEndOf="@+id/Author1"
                 app:layout_constraintTop_toBottomOf="@+id/displayGenre" />
 
+            <!-- Thoughts -->
             <TextView
                 android:id="@+id/Descr"
                 android:layout_width="wrap_content"
@@ -182,6 +167,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Author1" />
 
+            <!-- Display Description -->
             <TextView
                 android:id="@+id/displayDescriptionBook"
                 android:layout_width="270dp"
@@ -203,6 +189,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-
 
 </LinearLayout>

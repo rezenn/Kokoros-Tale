@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activity.BookActivity">
-
-
+    <!-- Background Image -->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
@@ -19,21 +18,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backgroundimage" />
 
+    <!-- Gradient Overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_overlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- App Title -->
     <TextView
         android:id="@+id/logoName2"
-        android:layout_width="255dp"
-        android:layout_height="46dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="1dp"
         android:fontFamily="@font/merienda_bold"
         android:shadowColor="#666666"
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="4"
         android:text="Kokoro's Tale"
-        android:textColor="@color/buleGreen"
+        android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,10 +56,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="10dp"
-        android:text="Stories"
+        android:text="Notes"
         android:textColor="#078BF2"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler2"
