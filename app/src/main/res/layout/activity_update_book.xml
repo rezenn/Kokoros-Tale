@@ -175,7 +175,7 @@
 
     <!-- Post Story Button -->
     <Button
-        android:id="@+id/UpdateStoryButton"
+        android:id="@+id/updateBookButton"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="90dp"

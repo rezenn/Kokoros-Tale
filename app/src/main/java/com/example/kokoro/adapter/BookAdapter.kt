@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kokoro.R
 import com.example.kokoro.model.BookModel
 import com.example.kokoro.ui.activity.UpdateBookActivity
+import com.example.kokoro.ui.activity.UpdateStoryActivity
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import java.lang.Exception
@@ -39,17 +40,15 @@ class BookAdapter(val context: Context, var data: ArrayList<BookModel>) : Recycl
     }
 
     override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
-        val book = data[position]
-        Log.d("BookAdapter", "Book at position $position: $book")
 
-        holder.sTitle.text = book.bookTitle ?: "No Title"
-        holder.sGenre.text = book.bookGenre ?: "No Genre"
-        holder.sAuthor.text = book.bookAuthor ?: "No Author"
-        holder.sDesc.text = book.bookThoughts ?: "No Description"
+        holder.sTitle.text = data[position].bookTitle
+        holder.sGenre.text = data[position].bookGenre
+        holder.sAuthor.text = data[position].bookAuthor
+        holder.sDesc.text = data[position].bookThoughts
 
         // Handle image loading
-        if (!book.bookimageUrl.isNullOrEmpty()) {
-            Picasso.get().load(book.bookimageUrl).into(holder.imageView, object : Callback {
+        if (!data[position].bookimageUrl.isNullOrEmpty()) {
+            Picasso.get().load(data[position].bookimageUrl).into(holder.imageView, object : Callback {
                 override fun onSuccess() {
                     holder.progressBar.visibility = View.GONE
                 }
@@ -75,7 +74,13 @@ class BookAdapter(val context: Context, var data: ArrayList<BookModel>) : Recycl
                 holder.sDesc.maxLines = Integer.MAX_VALUE
             }
         }
+        holder.editButton.setOnClickListener {
+            val intent = Intent(context, UpdateBookActivity::class.java)
+            intent.putExtra("bookId", data[position].bookId)
+            context.startActivity(intent)
+        }
     }
+
 
     fun updateData(books: List<BookModel>) {
         data.clear()

@@ -16,12 +16,12 @@ import com.squareup.picasso.Picasso
 
 class UpdateStoryActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityUpdateStoryBinding
-    private lateinit var storyViewModel: StoryViewModel
-    private lateinit var imageUtils: ImageUtils
+   lateinit var binding: ActivityUpdateStoryBinding
+   lateinit var storyViewModel: StoryViewModel
+     lateinit var imageUtils: ImageUtils
 
-    private var storyId: String? = null
-    private var imageUrl: String? = null
+     var storyId: String? = null
+     var imageUrl: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -92,7 +92,7 @@ class UpdateStoryActivity : AppCompatActivity() {
         )
 
         imageUrl?.let {
-            updatedMap["imageBrowse"] = it
+            updatedMap["imageUrl"] = it
         }
 
         storyId?.let { id ->
