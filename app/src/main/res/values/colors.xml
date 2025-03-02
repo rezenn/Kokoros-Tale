@@ -7,4 +7,5 @@
     <color name="lightPurple">#686E83</color>
     <color name="darkPurple">#212D75</color>
     <color name="buleGreen">#235f7f</color>
+    <color name="accentColor">#00BCD4</color>
 </resources>
