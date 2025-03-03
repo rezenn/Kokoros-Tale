@@ -162,7 +162,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="47dp"
         android:gravity="top"
-        android:hint="Write your story..."
+        android:hint="Write your thoughts on this book..."
         android:background="@drawable/rounded_input"
         android:textColorHint="@color/white"
         android:inputType="textMultiLine"
